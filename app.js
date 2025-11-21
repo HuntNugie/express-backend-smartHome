@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import smartHomeRoute from "./routes/smartHome.route.js"
 import { config } from "dotenv";
+import SmartHome from "./models/SmartHome.js";
 config();
 
 const app = express();
