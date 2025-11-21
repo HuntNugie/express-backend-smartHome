@@ -9,15 +9,17 @@ export const update = async(req,res)=>{
     const {id_toggle} = req.body;
 
     const data = await SmartHome.findUnique({
-        where:{id:id_toggle}
+        where:{id:parseInt(id_toggle)}
     });
 
     const update = await SmartHome.update({
-        where:{id:id_toggle},
+        where:{id:parseInt(id_toggle)},
         data:{
             status : !data.status
         }
     });
 
-    res.status(200).json({update});
+    const result = await SmartHome.findMany();
+
+    res.status(200).json(result);
 }
