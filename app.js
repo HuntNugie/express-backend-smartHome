@@ -9,12 +9,12 @@ const app = express();
 
 // untuk cors
 app.use(cors());
-
+app.use(express.json())
 // untuk route
 app.use("/api",smartHomeRoute);
 
 // untuk server
-app.listen(process.env.SERVER_PORT,(err)=>{
+app.listen(process.env.SERVER_PORT,"0.0.0.0",(err)=>{
     if(err){
         return console.log(err)
     };
