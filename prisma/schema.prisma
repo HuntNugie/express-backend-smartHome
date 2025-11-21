@@ -12,3 +12,10 @@ generator client {
 datasource db {
   provider = "mysql"
 }
+
+model smartHome {
+  id Int @id @default(autoincrement())
+  objek String 
+  status Boolean
+  created_at DateTime @default(now())
+}
