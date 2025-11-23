@@ -1,12 +1,14 @@
 import { Router } from "express";
-import { index as indexDht,update as updateDht } from "../controllers/dht22Controller.js";
+import { index,indexMax,update } from "../controllers/dht22Controller.js";
 
 const route = Router();
 
 // untuk mendapatkan data dht 22
-route.get("/all",indexDht)
+route.get("/all",index)
 
 // untuk mengupdate data dht 22
-route.get("/update/:temp/:humd",updateDht);
+route.get("/update/:temp/:humd",update);
 
+// untuk mendapatkan nilai maxs dht 22
+route.get("/max",indexMax);
 export default route;

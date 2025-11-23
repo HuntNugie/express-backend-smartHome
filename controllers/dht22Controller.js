@@ -1,4 +1,5 @@
 import Dht22 from "../models/Dht22.js";
+import Maxs from "../models/Maxs.js";
 export const index = async (req, res) => {
     try {
         const dht = await Dht22.findUnique({
@@ -22,5 +23,16 @@ export const update = async (req, res) => {
         return res.status(200).json(update);
     } catch (error) {
         return res.status(400).json({message: "gagal : " + error});
+    }
+};
+
+export const indexMax = async (req, res) => {
+    try {
+        const data = await Maxs.findUnique({
+            where: {id: 1},
+        });
+        return res.status(200).json(data);
+    } catch (error) {
+        return res.status(404).json("gagal : " + error);
     }
 };
