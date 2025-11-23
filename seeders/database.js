@@ -1,4 +1,5 @@
 import Dht22 from "../models/Dht22.js";
+import Maxs from "../models/Maxs.js";
 import SmartHome from "../models/SmartHome.js";
 
 // const data = [
@@ -43,10 +44,14 @@ import SmartHome from "../models/SmartHome.js";
 
 // untuk dht22
 
-async function main() {
-    await Dht22.create();
-}
+// async function main() {
+//     await Dht22.create();
+// }
 
+// untuk maximal
+async function main(){
+    await Maxs.create();
+}
 
 main()
 .then(() => {

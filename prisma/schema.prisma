@@ -29,3 +29,10 @@ model dht22 {
   humidity Float @default(0)
   created_at DateTime @default(now())
 }
+
+model maxs {
+  id Int @id @default(autoincrement())
+  max_temp Int @default(30)
+  max_humd Int @default(70)
+  created_at DateTime @default(now())
+}
