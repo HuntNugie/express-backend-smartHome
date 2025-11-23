@@ -36,3 +36,23 @@ export const indexMax = async (req, res) => {
         return res.status(404).json("gagal : " + error);
     }
 };
+
+
+export const updateMax = async(req,res)=>{
+    try {
+        const {max_temp,max_humd} = req.body;
+        const update = await Maxs.update({
+            where:{
+                id:1
+            },
+            data:{
+                max_temp,
+                max_humd
+            }
+        })
+
+        res.status(200).json({message:"berhasil update",status:true,data:update})
+    } catch (error) {
+        res.status(400).json({message:"gagal update : "+error,status:false})
+    }
+}
