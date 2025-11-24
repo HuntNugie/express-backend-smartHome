@@ -1,5 +1,6 @@
 import Dht22 from "../models/Dht22.js";
 import Maxs from "../models/Maxs.js";
+import Servo from "../models/Servo.js";
 import SmartHome from "../models/SmartHome.js";
 
 // const data = [
@@ -48,10 +49,15 @@ import SmartHome from "../models/SmartHome.js";
 //     await Dht22.create();
 // }
 
-// untuk maximal
+// untuk servo
 async function main(){
-    await Maxs.create();
+    await Servo.create();
 }
+
+// untuk maximal
+// async function main(){
+//     await Maxs.create();
+// }
 
 main()
 .then(() => {
