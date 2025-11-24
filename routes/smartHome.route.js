@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { index, update } from "../controllers/smartHomeController.js";
 import dht22Route from "./dht22.route.js";
+import servoRoute from "./servo.route.js"
 const route = Router();
 
 // untuk route smartHome
@@ -9,4 +10,7 @@ route.put("/smartHome/update",update)
 
 // untuk route dht
 route.use("/dht22",dht22Route)
+
+// untuk route servo
+route.use("/servo",servoRoute)
 export default route
